@@ -1,16 +1,17 @@
-#VRML_SIM R2025a utf8
+#VRML_SIM R2023b utf8
 
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puck.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/robots/gctronic/e-puck/protos/E-puckGroundSensors.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/floors/protos/RectangleArena.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackground.proto"
 EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023a/projects/objects/backgrounds/protos/TexturedBackgroundLight.proto"
+EXTERNPROTO "https://raw.githubusercontent.com/cyberbotics/webots/R2023b/projects/objects/factory/containers/protos/WoodenBox.proto"
 
 WorldInfo {
 }
 Viewpoint {
-  orientation 0.42431259200187316 -0.02678007069328881 -0.9051196893683808 3.171857911332165
-  position 1.0157148132272598 0.0630468211981477 0.8449464871507095
+  orientation 0.6747211096704535 -0.31188218685335267 -0.6689401510513796 3.88830826444714
+  position -0.7217000819766208 -0.43508719900343645 3.5297995689820842
   follow "e-puck"
 }
 TexturedBackground {
@@ -19,6 +20,8 @@ TexturedBackgroundLight {
   texture "noon_cloudy_countryside"
 }
 RectangleArena {
+  translation -0.0485226 0.0757994 0
+  rotation 0 0 1 0.569414
   floorSize 1.2 0.8
   floorTileSize 1.2 0.8
   floorAppearance PBRAppearance {
@@ -32,13 +35,15 @@ RectangleArena {
   }
 }
 DEF E_PUCK E-puck {
-  hidden position_0_0 11.702947361070573
-  hidden position_0_1 11.70294736108822
-  hidden rotation_1 0 -1 0 0.8634232532886005
-  hidden rotation_2 0 -1 0 0.863423253270952
-  translation 0.500019 -0.207523 -0.000557892
-  rotation 0.0007263767738817738 -0.0007263722190421252 0.9999994723799516 1.5708005355048014
-  controller "line_following_wifi_HIL"
+  hidden position_0_0 361.3143705136159
+  hidden position_0_1 497.061529296391
+  hidden linearVelocity_0 -9.770949326872127e-05 -5.195031062733929e-05 0.0007227723379367044
+  hidden angularVelocity_0 0.0034633535362318807 -0.00651395847449538 3.452352218484192e-07
+  hidden rotation_1 0 -1 0 3.1103773028000887
+  hidden rotation_2 0 -1 0 5.593295277975946
+  translation -0.6389162357272388 0.08388340137606143 -0.00015642268903547432
+  rotation -0.0008577014724239518 0.00042157896820756066 -0.9999995433095746 1.0366799118260008
+  controller "line_following_with_HIL"
   window "botstudio"
   camera_width 40
   camera_height 1
@@ -46,4 +51,9 @@ DEF E_PUCK E-puck {
     E-puckGroundSensors {
     }
   ]
+}
+WoodenBox {
+  translation 0.428 0.258658 0.03
+  rotation 0 0 1 -1.047195307179586
+  size 0.06 0.06 0.06
 }
